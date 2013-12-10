@@ -10,9 +10,11 @@ var execFile = require('child_process').execFile;
 var pathToAutopep8Binary = "/usr/local/bin/autopep8" // Change to your autopep8 executable if necessary
 
 Hooks.addMenuItem("Actions/Python/autopep8", "cmd-alt-l", function () {
-	var type = Document.current().rootScope();
+	var document = Document.current();
+	var type = document.rootScope();
 
 	if ('python.source'.indexOf(type) !== -1) {
+		document.performSave();
 		execFile(pathToAutopep8Binary, ["--aggressive", Document.current().path()], function (error, stdout, stderr) {
 			Recipe.run(function (recipe) {
 				recipe.text = stdout;
