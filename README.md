@@ -15,7 +15,7 @@ The default autopep8 binary path is set to: */usr/local/bin/autopep8*.
 
 The following are the major contributors in no specific order:
 
-  * Bijan Rahnema ([hit8run](http://github.com/hit8run))
+  * Bijan Rahnema ([hit8run](http://github.com/tschundeee))
 
 ## License 
 
